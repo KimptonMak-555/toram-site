@@ -8,24 +8,43 @@
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
     <link href="/toramstyle.css" rel="stylesheet" type="text/css" media="all">
+      <style>
+
+  </style>
   </head>
 
 <body class=body>
-  <header>
-    <img src="resources/toram_ico.jpg" class="icon" alt="Toram Online icon" style="float:right;">
-    <img src="resources/toram_ico.jpg" class="icon" alt="Toram Online icon" style="float:left;">
-    <nav>
-      <div>
-        <a href="#about">About</a>
-        <a href="#weaponclasses"> Weapon Classes </a>
-        <a href="#world">World Map</a>
-      </div>
-    </nav>
-  </header>
+    <!--potum gif-->
   <img src='resources/Potum-toram-nobg.webp' alt='Toram online mascott: Potum' width="150" style='float:right; top:0;position:sticky;z-index:5'>
+  <!--Top floating nav-->
+<div class="MainHeader">
+  <img src="resources/toram_ico.jpg" class="icon" alt="Toram Online icon" style="float:right;">
+  <img src="resources/toram_ico.jpg" class="icon" alt="Toram Online icon" style="float:left;">
+  <div class="flex-row">
+    <a class="box" href="#about">
+      <img src="resources/info page icon.png" class="contents">
+      <span class="contents">Home</span>
+    </a>
+    <a class="box" href="#weaponclasses">
+      <img src="resources/fighting page icon.png" class="contents">
+      <span class="contents">Weapon Classes</span>
+    </a>
+    <a class="box" href="#world">
+      <img src="resources/inventory icon.png" class="contents">
+      <span class="contents">Game Systems</span>
+    </a>
+
+</div>
+  </div>
+    <div class="image-container">
+    <img src="resources/level up background.png" class="top-image">
+    <img src="resources/level up gimp.png" class="fill-image">
+  </div>
+
   <h1 class=head >
     Asobimo - Toram Online 
   </h1>
+
  
   <h2 class=head >A new path <br/> A new adventure</h2>
  
@@ -83,7 +102,7 @@
    <!-- Div for the seperate pages !-->
   
   <h3 class='head' id="weaponclasses">Weapon Classes<span style="font-family:cursive">:</span></h3>
-    
+    <!--Industry-->
   <div id="weapons" class='weaponsArea'>
     <div class="weaponTextOverlayArea">  
       <figure class="weapons">
