@@ -1,18 +1,26 @@
-function Percentage(x,y){
-    var scrollpos = x//window.scrollY;
-    var maxHeight = y//window.maxHeight;
-    var Percentage = Math.round(scrollpos / maxHeight)
-    return Percentage
+
+let maxWidthPercentage = 1200;
+function Percentage(){
+    var scrollpos = window.scrollY;
+    const maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
+    var Percentage = scrollpos / maxScrollY;
+    return Percentage;
 }
 
 function UpdateScroll() {
-    var Percentage = Percentage(2,5);
-    var imgforeground = document.getElementById("fgimg");
+    let percentage = Percentage(); // should return a value from 0 to 1
+    let imgforeground = document.getElementById("levelUpProgress");
+    let percentageText = document.getElementById("levelUppercentage");
 
-    var newWidth = toString(Percentage)+"px";
-    //imgforeground.style.width = newWidth;
-    window.alert(newWidth);
-    console.log(newWidth);
+    let percentValue = Math.trunc(percentage * 100);
+    console.log(percentValue);
+
+    percentageText.textContent = percentValue + "%";
+
+    let currentScrollLevel = Math.trunc(percentage * maxWidthPercentage);
+    imgforeground.style.width = currentScrollLevel + "px";
 }
-console.log("starting")
+
+window.onscroll = function(){
 UpdateScroll();
+}
