@@ -1,18 +1,7 @@
-@font-face {
-  font-family: Toram;
-  src: url('resources/font/moblaztrial.otf');
-}
-.body {
-  background-color: #ffffff;
-  color: #DFBC85ff;
-  font-family: 'Toram'; 
-  background-image: url("/resources/Toram_BASE3_blur_tint.jpg"); /* Swap out to a faded out ver. */ /*Done*/
-  background-attachment:fixed;
-  background-repeat:no-repeat;
-}
 .MainBody{
-    margin-top: 10%;
+    margin-top: 8%; /*10 was a bit much*/
 }
+/* Transfer to Weapons.css */
 .overImageText {
  Display:none;
  color:#FEEDB7ff;
@@ -21,13 +10,6 @@
  text-align: center;
  font-size:3vw;
  font-family: 'Toram';
-}
-
-p {
- font-family: cursive, Georgia, Arial; 
- margin:1% 10% 1% 2%; /* Top Right Bottom Left */
- font-size: 19px;
- text-shadow : 0 0 15px  black;
 }
 
 figure.weapons {
@@ -61,23 +43,12 @@ figcaption.weapons {
   Display:flex;
   flex-wrap: wrap;
 }
+/* End transfer to weapons.css */
 
 .icon {
   width:64px;
 }
 
-footer{
-  text-align:center;
-  background-color: #B7773Eff;
-  color: #F4DEB8ff;
-  padding:7px;
-  position:relative;
-  left:-7px;
-  bottom: -11px;
-  width:100%;
-}
-
-footer p{
-  margin:0;
-  padding:0;
+.symbolsFont {
+  font-family: cursive, Georgia, Arial;  /* Make use of with a symbols for text like ":"*/
 }
