@@ -6,6 +6,7 @@
     <title>Your Second World</title>
     <link href="Footer-Component/footer.css" rel="stylesheet" type="text/css" media="all">
     <link href="About-Component/about.css" rel="stylesheet" type="text/css" media="all">
+    <link href="Weapons-Component/weaponsummary.css" rel="stylesheet" type="text/css" media="all">
     <link href="Home Page/Home-FloatingHeader.css" rel="stylesheet" type="text/css" media="all">
     <link href="Home Page/Home-MainBody.css" rel="stylesheet" type="text/css" media="all">
     <link href="Home Page/Home-Scroll.css" rel="stylesheet" type="text/css" media="all">
@@ -14,7 +15,7 @@
   </head>
   <script src="Home Page/Home-ProgressBar.js"></script>
   <script src="font_colors_script.js"></script> 
-   <script src="ComponentLoader.js"></script>
+  <script src="ComponentLoader.js"></script>
 <body class=body>
   <!--potum gif-->
     <img src='resources/Potum-toram-nobg.webp' alt='Toram online mascott: Potum' class="PotumGiff">
@@ -59,7 +60,7 @@
             </a>
           </li>
           <li>
-            <a href="#weapons">
+            <a onclick="LoadDynamicComponent('weaponsum', 'Weapons-Component/weaponsummary.html');run(1)">
               <img src="resources/ui button.png" alt="Button"
                   onmouseover="this.src='resources/ui button hover.png'"
                   onmouseout="this.src='resources/ui button.png'">
@@ -77,6 +78,7 @@
       </ul>
     </div>
     <div id="about"></div>
+    <div id="weaponsum"></div>
     <div id="footer"></div>
 
 </body>

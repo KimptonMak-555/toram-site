@@ -1,49 +1,6 @@
 .MainBody{
     margin-top: 8%; /*10 was a bit much*/
 }
-/* Transfer to Weapons.css */
-.overImageText {
- Display:none;
- color:#FEEDB7ff;
- position:absolute;
- bottom: 50px;
- text-align: center;
- font-size:3vw;
- font-family: 'Toram';
-}
-
-figure.weapons {
-  margin: 1em;
-}
-
-
-img.weapons {
-  width:100%;
-  position:relative;
-  left:10px;
-  margin:auto;
-  border-radius : 35px;
-}
-
-figcaption.weapons {
-  text-align:center;
-
-}
-
-.weaponTextOverlayArea {
-  text-align: left;
-  position:relative;
-  width:30%;
-  margin:0.5em 1em;
-  
-}
-
-.weaponsArea {
-  text-align:center;
-  Display:flex;
-  flex-wrap: wrap;
-}
-/* End transfer to weapons.css */
 
 .icon {
   width:64px;

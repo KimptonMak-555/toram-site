@@ -66,10 +66,15 @@ function WeaponImgInteraction() {
   i.addEventListener("click",DisplayClassText);
   i.addEventListener("mouseleave",HideClassText);
   }
+  console.log("ran")
 } 
 
-WeaponImgInteraction();
-document.getElementById("firstButton").addEventListener("click",firstfunc);
-window.addEventListener("load",colorchange("head"));
-window.addEventListener("load",colorchange("body"));
+function run(){
+  console.log("waiting")
+  setTimeout(WeaponImgInteraction,"1000")
+}
+// DISABLED COLOR CHANGE
+// // window.addEventListener("load",colorchange("head"));
+// window.addEventListener("load",colorchange("body"));
+
 

@@ -1,0 +1,41 @@
+.overImageText {
+ Display:none;
+ color:#FEEDB7ff;
+ position:absolute;
+ bottom: 50px;
+ text-align: center;
+ font-size:3vw;
+ font-family: 'Toram';
+}
+
+figure.weapons {
+  margin: 1em;
+}
+
+
+img.weapons {
+  width:100%;
+  position:relative;
+  left:10px;
+  margin:auto;
+  border-radius : 35px;
+}
+
+figcaption.weapons {
+  text-align:center;
+
+}
+
+.weaponTextOverlayArea {
+  text-align: left;
+  position:relative;
+  width:30%;
+  margin:0.5em 1em;
+  
+}
+
+.weaponsArea {
+  text-align:center;
+  display:flex;
+  flex-wrap: wrap;
+}

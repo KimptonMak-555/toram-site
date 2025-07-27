@@ -1,5 +1,5 @@
 .about-head1{
-    text-align: center;
+ text-align: center;
  font-size: 2.3em; 
  position: relative;
  font-family: 'Toram';
@@ -19,6 +19,7 @@
  margin:10px;
  color:#FEEDB7ff;
  text-shadow:0 0 4px #FEEDB7ff;
+ text-align: center;
 }
 
 p {
