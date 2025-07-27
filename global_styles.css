@@ -13,47 +13,5 @@
   background-repeat:no-repeat;
 }
 
-.head {
- font-family: 'Toram';
- font-size: 3em;
- margin:10px;
- color:#FEEDB7ff;
- text-shadow:0 0 4px #FEEDB7ff; /* x-axis y-axis glow color */
-}
-
-h2.head{
- font-size: 2.3em; 
-}
-
-h3.head{
- font-size: 1.65em;  
- padding: 5px 0; 
- margin:10px 2%
-}
-h4.head{
- font-size: 1.4em;  
-}
 
 
-p {
- font-family: cursive, Georgia, Arial; 
- margin:1% 10% 1% 2%; /* Top Right Bottom Left */
- font-size: 19px;
- text-shadow : 0 0 15px  black;
-}
-
-footer{
-  text-align:center;
-  background-color: #B7773Eff;
-  color: #F4DEB8ff;
-  padding:7px;
-  position:relative;
-  left:-7px;
-  bottom:-11px;
-  width:100%;
-}
-
-footer p{
-  margin:0;
-  padding:0;
-}

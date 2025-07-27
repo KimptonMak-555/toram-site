@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Second World</title>
-    <link href="/Home-FloatingHeader.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/Home-MainBody.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/Home-Scroll.css" rel="stylesheet" type="text/css" media="all">
+    <link href="Footer-Component/footer.css" rel="stylesheet" type="text/css" media="all">
+    <link href="About-Component/about.css" rel="stylesheet" type="text/css" media="all">
+    <link href="Home Page/Home-FloatingHeader.css" rel="stylesheet" type="text/css" media="all">
+    <link href="Home Page/Home-MainBody.css" rel="stylesheet" type="text/css" media="all">
+    <link href="Home Page/Home-Scroll.css" rel="stylesheet" type="text/css" media="all">
     <link href="global_styles.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/resources/Home icon.png" rel="icon"> <!-- Make the icon the "home" icon in toram-->
+    <link href="/resources/Home icon.png" rel="icon">
   </head>
-  <script src="Progress_bar.js"></script>
+  <script src="Home Page/Home-ProgressBar.js"></script>
   <script src="font_colors_script.js"></script> 
-
+   <script src="ComponentLoader.js"></script>
 <body class=body>
   <!--potum gif-->
     <img src='resources/Potum-toram-nobg.webp' alt='Toram online mascott: Potum' class="PotumGiff">
@@ -42,12 +44,14 @@
     <!--Main Body-->
     <div id="content" class="MainBody">
       <div class="scroll">
-        <img src="resources/scroll.png" alt="Background scroll">
-        <h1 class="head">Asobimo Toram Online</h1>
-        <h2 class="head">A new path and a new adventure</h2>
+        <img id="ScrollTop" src="resources/scroll top.png" alt="Background scroll">
+        <img id="ScrollBody" src="resources/scroll body.png" alt="Background scroll">
+        <img id="ScrollBottom" src="resources/scroll bottom.png" alt="Background scroll">
+        <h1 class="head reveal-text">Asobimo Toram Online</h1>
+        <h3 class="head reveal-text-fade">A new path and a new adventure</h3>
       <ul class="scroll-list">
           <li>
-            <a href="#about">
+            <a onclick="LoadDynamicComponent('about','About-Component/about.html')">
               <img src="resources/ui button.png" alt="Button"
                   onmouseover="this.src='resources/ui button hover.png'"
                   onmouseout="this.src='resources/ui button.png'">
@@ -72,14 +76,8 @@
           </li>
       </ul>
     </div>
-
-    <footer>
-    <p>
-      <img src="resources/Asobimo_icon.jpeg" class="icon" style="float:left">
-      Disclaimer! <br> We are in no way associated with Toram Online or Asobimo Games, just a solid fans.<br>
-      <a href="https://asobimo.com/en/games/toram/">Visit the Asobimo site!</a>
-    </p>
-    </footer>
+    <div id="about"></div>
+    <div id="footer"></div>
 
 </body>
 </html>

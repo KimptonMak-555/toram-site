@@ -1,0 +1,128 @@
+
+.scroll {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto; /* or whatever fits */
+}
+@keyframes stretchDown {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 425px; /* Final height of the scroll body */
+  }
+}
+
+
+#ScrollTop {
+  width:700px;
+  display: block;
+  margin: auto;
+}
+
+#ScrollBody {
+  height: 0px;
+  width:600px;
+  display: block;
+  margin: auto;
+  animation: stretchDown 3s ease forwards;
+  object-fit: fill;
+}
+
+#ScrollBottom {
+  width:700px;
+  margin: auto;
+  display: block;
+}
+@keyframes typeIn {
+  from { width: 0; }
+  to { width: 100%; }
+}
+.reveal-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typeIn 3s steps(30, end) forwards;
+  animation-delay: 1.5s;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.reveal-text-fade{
+  opacity: 0;
+  animation: fadeIn 2s ease-out forwards;
+  animation-delay: 2.75s;
+}
+
+.head {
+  font-family: 'Toram';
+  font-size: 3em;
+  margin-top: 10px;
+  color: #FEEDB7ff;
+  text-shadow: 0 0 4px rgb(0, 0, 0);
+  position: absolute;
+  text-align: center;
+  z-index: 2;
+}
+
+h1.head {
+  top: 15%;
+  left: 50%;
+  font-size: 2.8em;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+h3.head {
+  top: 25%;
+    text-align: center;
+  left: 48%;
+  transform: translateX(-50%);
+  font-size: 1.5em;
+  color: rgb(85, 85, 84);
+   text-shadow: 0 0 8px rgb(241, 234, 234);
+}
+.scroll-list {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  z-index: 2;
+  font-family: inherit;
+  list-style: none;
+  padding: 0;
+}
+
+.scroll-list a {
+  opacity: 0;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  font-family: inherit;
+  animation: fadeIn 2s ease-out forwards;
+  animation-delay: 4s;
+}
+
+.scroll-list img {
+  width: 300px;
+  height: 100px;
+  display: block;
+}
+
+.scroll-list .label {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.2em;
+  z-index: 2;
+  pointer-events: none;
+}
+
