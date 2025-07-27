@@ -82,7 +82,7 @@ right:0; top:0;position:fixed;z-index:5;width: 150px;
 .box img.contents {
   width: 50px;
   height: 50px;
-  object-fit: contain;
+  object-fit: contain; /* Whats this about?? commenting it out changes*/
 }
 
 .box .contents {
