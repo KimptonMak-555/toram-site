@@ -1,41 +1,58 @@
-let htmlPages = [
-  { file: 'Footer-Component/footer.html', target: 'footer' }
+let htmlComponents = [
+  { file: 'Footer-Component/footer.html', componentID: 'footer' }
 ];
-
+let currentComponents = []
 window.onload = function () {
-  LoadHtml(htmlPages);
+  LoadHtml(htmlComponents);
 };
 
-function LoadHtml(pages) {
-  pages.forEach(page => {
-    LoadComponent(page);
+function LoadHtml(components) {
+  components.forEach(component => {
+    LoadComponent(component);
   });
 }
-function LoadComponent(page) {
-    fetch(page.file)
-        .then(res => res.text())
-        .then(html => {
-        document.getElementById(page.target).innerHTML = html;
+
+//this is now an event, remove this text when you see it. it must be called like in the dynamic component fuction
+function LoadComponent(component) {
+    return fetch(component.file)
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById(component.componentID).innerHTML = html;
     });
 }
 
 function UnloadDynamicComponent(componentID){
-  console.log(document.getElementById(componentID).innerHTML)
-  if (componentID.innerHTML !== ""){
+    if (componentID.innerHTML !== ""){
     let target = document.getElementById(componentID)
     target.innerHTML = "";
+    currentComponents = currentComponents.filter(component => component.componentID !== componentID);
   }
-  console.log(document.getElementById(componentID).innerHTML)
 }
 
-
 function LoadDynamicComponent(componentID,componentHtml) {
-    let page = { file: componentHtml, target: componentID }
-    if (document.getElementById(page.target).innerHTML == ""){
-      LoadComponent(page);
+    let component = { file: componentHtml, componentID: componentID }
+
+    let element = document.getElementById(component.componentID);
+  
+    if (element.innerHTML == ""){
+
+      LoadComponent(component).then(() => {
+          currentComponents.push(component)
+          CloseScroll();
+          window.scrollBy({
+            top: 500,
+            left: 0,
+            behavior: 'smooth'
+          });
+      });
+
     }
     else{
       UnloadDynamicComponent(componentID)
     }
-    
+}
+function RemoveAllComponents(){
+  currentComponents.forEach(component => {
+      UnloadDynamicComponent(component.componentID)
+    });
 }

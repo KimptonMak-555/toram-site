@@ -16,6 +16,7 @@
   <script src="Home Page/Home-ProgressBar.js"></script>
   <script src="font_colors_script.js"></script> 
   <script src="ComponentLoader.js"></script>
+    <script src="ScrollStateScontroller.js"></script>
 <body class=body>
   <!--potum gif-->
     <img src='resources/Potum-toram-nobg.webp' alt='Toram online mascott: Potum' class="PotumGiff">
@@ -44,38 +45,44 @@
     </div>
     <!--Main Body-->
     <div id="content" class="MainBody">
-      <div class="scroll">
+      <div id="scroll">
+        
         <img id="ScrollTop" src="resources/scroll top.png" alt="Background scroll">
         <img id="ScrollBody" src="resources/scroll body.png" alt="Background scroll">
-        <img id="ScrollBottom" src="resources/scroll bottom.png" alt="Background scroll">
-        <h1 class="head reveal-text">Asobimo Toram Online</h1>
-        <h3 class="head reveal-text-fade">A new path and a new adventure</h3>
-      <ul class="scroll-list">
-          <li>
-            <a onclick="LoadDynamicComponent('about','About-Component/about.html')">
-              <img src="resources/ui button.png" alt="Button"
-                  onmouseover="this.src='resources/ui button hover.png'"
-                  onmouseout="this.src='resources/ui button.png'">
-              <span class="label">About</span>
-            </a>
-          </li>
-          <li>
-            <a onclick="LoadDynamicComponent('weaponsum', 'Weapons-Component/weaponsummary.html');run(1)">
-              <img src="resources/ui button.png" alt="Button"
-                  onmouseover="this.src='resources/ui button hover.png'"
-                  onmouseout="this.src='resources/ui button.png'">
-              <span class="label">Weapon Area</span>
-            </a>
-          </li>
-          <li>
-            <a href="/about.html">
-              <img src="resources/ui button.png" alt="Button"
-                  onmouseover="this.src='resources/ui button hover.png'"
-                  onmouseout="this.src='resources/ui button.png'">
-              <span class="label" style="width:140px;text-align:center">Game  System</span>
-            </a>
-          </li>
-      </ul>
+        <div>
+            <img id="ScrollBottom" src="resources/scroll bottom.png" alt="Background scroll">
+            <img id="ScrollSeal" src="resources/scroll seal.png" onclick="OpenScroll()">
+        </div>
+        <div id="Scroll-Contents">
+          <h1 class="head reveal-text">Asobimo Toram Online</h1>
+          <h3 class="head reveal-text-fade">A new path and a new adventure</h3>
+          <ul id="scroll-list">
+              <li>
+                <a onclick="LoadDynamicComponent('about','About-Component/about.html')">
+                  <img src="resources/ui button.png" alt="Button"
+                      onmouseover="this.src='resources/ui button hover.png'"
+                      onmouseout="this.src='resources/ui button.png'">
+                  <span class="label">About</span>
+                </a>
+              </li>
+              <li>
+                <a onclick="LoadDynamicComponent('weaponsum', 'Weapons-Component/weaponsummary.html');run(1)">
+                  <img src="resources/ui button.png" alt="Button"
+                      onmouseover="this.src='resources/ui button hover.png'"
+                      onmouseout="this.src='resources/ui button.png'">
+                  <span class="label">Weapon Area</span>
+                </a>
+              </li>
+              <li>
+                <a href="/about.html">
+                  <img src="resources/ui button.png" alt="Button"
+                      onmouseover="this.src='resources/ui button hover.png'"
+                      onmouseout="this.src='resources/ui button.png'">
+                  <span class="label" style="width:140px;text-align:center">Game  System</span>
+                </a>
+              </li>
+          </ul>
+        </div>
     </div>
     <div id="about"></div>
     <div id="weaponsum"></div>
