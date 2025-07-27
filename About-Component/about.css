@@ -1,0 +1,29 @@
+.about-head1{
+    text-align: center;
+ font-size: 2.3em; 
+ position: relative;
+ font-family: 'Toram';
+ font-size: 3em;
+ margin:10px;
+ color:#FEEDB7ff;
+ text-shadow:0 0 4px #FEEDB7ff;
+}
+
+.about-head2{
+ font-size: 1.65em;  
+ padding: 5px 0; 
+ margin:10px 2%;
+ position: relative;
+ font-family: 'Toram';
+ font-size: 3em;
+ margin:10px;
+ color:#FEEDB7ff;
+ text-shadow:0 0 4px #FEEDB7ff;
+}
+
+p {
+ font-family: cursive, Georgia, Arial; 
+ margin:1% 10% 1% 2%; /* Top Right Bottom Left */
+ font-size: 19px;
+ text-shadow : 0 0 15px  black;
+}

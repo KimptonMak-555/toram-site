@@ -82,7 +82,8 @@ h1.head {
 
 h3.head {
   top: 25%;
-  left: 50%;
+    text-align: center;
+  left: 48%;
   transform: translateX(-50%);
   font-size: 1.5em;
   color: rgb(85, 85, 84);

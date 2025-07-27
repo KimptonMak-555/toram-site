@@ -13,7 +13,6 @@ function UpdateScroll() {
     let percentageText = document.getElementById("levelUppercentage");
 
     let percentValue = Math.trunc(percentage * 100);
-    console.log(percentValue);
 
     percentageText.textContent = percentValue + "%";
 
