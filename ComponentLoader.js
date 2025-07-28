@@ -6,13 +6,13 @@ window.onload = function () {
   LoadHtml(htmlComponents);
 };
 
+
 function LoadHtml(components) {
   components.forEach(component => {
     LoadComponent(component);
   });
 }
 
-//this is now an event, remove this text when you see it. it must be called like in the dynamic component fuction
 function LoadComponent(component) {
     return fetch(component.file)
     .then(res => res.text())
@@ -30,11 +30,10 @@ function UnloadDynamicComponent(componentID){
 }
 
 function LoadDynamicComponent(componentID, componentHtml) {
-  let component = { file: componentHtml, componentID: componentID };
+  let component= { file: componentHtml, componentID: componentID };
   let element = document.getElementById(component.componentID);
 
   if (element.innerHTML === "") {
-
       let componentElement = document.getElementById(component.componentID);
       let dynamicComponent = {
         file: componentHtml,

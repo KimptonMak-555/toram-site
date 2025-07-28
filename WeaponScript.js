@@ -47,7 +47,6 @@ let i = this.querySelectorAll("img.weapons");
 let x = this.getElementsByClassName("overImageText");
 let img = i[0];
 imgsrc = img.src;
-console.log(imgwidth,"  ",imgheight)
 let text = x[0];
 switch (img.id){
 case "sword":
