@@ -10,10 +10,17 @@
     height: 0px;
   }
   to {
-    height: 425px; /* Final height of the scroll body */
+    height: 425px;
   }
 }
-
+@keyframes stretchUp{
+  from {
+    height: 425px;
+  }
+  to {
+    height: 0px;
+  }
+}
 
 #ScrollTop {
   width:700px;
@@ -114,8 +121,7 @@ h3.head {
   display: inline-block;
   text-decoration: none;
   font-family: inherit;
-  animation: fadeIn 2s ease-out forwards;
-  animation-delay: 4s;
+  animation: fadeIn 2s ease-out forwards 4s;
 }
 
 #scroll-list img {

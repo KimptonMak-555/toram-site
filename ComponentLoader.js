@@ -29,28 +29,32 @@ function UnloadDynamicComponent(componentID){
   }
 }
 
-function LoadDynamicComponent(componentID,componentHtml) {
-    let component = { file: componentHtml, componentID: componentID }
+function LoadDynamicComponent(componentID, componentHtml) {
+  let component = { file: componentHtml, componentID: componentID };
+  let element = document.getElementById(component.componentID);
 
-    let element = document.getElementById(component.componentID);
-  
-    if (element.innerHTML == ""){
+  if (element.innerHTML === "") {
+    LoadComponent(component).then(() => {
+      let componentElement = document.getElementById(component.componentID);
 
-      LoadComponent(component).then(() => {
-          currentComponents.push(component)
-          CloseScroll();
-          window.scrollBy({
-            top: 500,
-            left: 0,
-            behavior: 'smooth'
-          });
+      // Add component info to tracking array
+      currentComponents.push({
+        file: componentHtml,
+        componentID: componentID,
+        componentElement: componentElement
       });
-
-    }
-    else{
-      UnloadDynamicComponent(componentID)
-    }
+      //scroll to last inserted
+      const last = currentComponents[currentComponents.length - 1];
+      window.scrollTo({
+        top: last.componentElement.offsetTop,
+        behavior: 'smooth'
+      });
+    });
+  } else {
+    UnloadDynamicComponent(componentID);
+  }
 }
+
 function RemoveAllComponents(){
   currentComponents.forEach(component => {
       UnloadDynamicComponent(component.componentID)
