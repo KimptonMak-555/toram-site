@@ -34,22 +34,26 @@ function LoadDynamicComponent(componentID, componentHtml) {
   let element = document.getElementById(component.componentID);
 
   if (element.innerHTML === "") {
-    LoadComponent(component).then(() => {
-      let componentElement = document.getElementById(component.componentID);
 
-      // Add component info to tracking array
-      currentComponents.push({
+      let componentElement = document.getElementById(component.componentID);
+      let dynamicComponent = {
         file: componentHtml,
         componentID: componentID,
         componentElement: componentElement
+      }
+      LoadComponent(component).then(() => {
+        //this is an event that other scripts can use when they wanna do stuff once a component has been loaded
+        document.dispatchEvent(new CustomEvent("componentLoaded", {
+          detail: { component: dynamicComponent }
+        }));
+        currentComponents.push(dynamicComponent);
+        //scroll to last inserted
+        const last = currentComponents[currentComponents.length - 1];
+        window.scrollTo({
+          top: last.componentElement.offsetTop,
+          behavior: 'smooth'
+        });
       });
-      //scroll to last inserted
-      const last = currentComponents[currentComponents.length - 1];
-      window.scrollTo({
-        top: last.componentElement.offsetTop,
-        behavior: 'smooth'
-      });
-    });
   } else {
     UnloadDynamicComponent(componentID);
   }

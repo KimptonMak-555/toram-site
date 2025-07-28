@@ -1,15 +1,28 @@
-footer{
-  text-align:center;
-  background-color: #B7773Eff;
-  color: #F4DEB8ff;
-  padding:7px;
-  position:relative;
-  left:-7px;
-  bottom:0;
-  width:100%;
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-footer p{
-  margin:0;
-  padding:0;
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrap {
+  flex: 1; /* pushes footer to the bottom */
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  background-color: #B7773Eff;
+  color: #F4DEB8ff;
+  padding: 7px;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+  padding: 0;
 }
