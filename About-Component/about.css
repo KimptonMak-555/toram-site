@@ -27,4 +27,52 @@ p {
  margin:1% 10% 1% 2%; /* Top Right Bottom Left */
  font-size: 19px;
  text-shadow : 0 0 15px  black;
+ text-align: center;
+}
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(400px);
+  }
+  100% {
+    transform: translateX(0); 
+    opacity: 1;
+  }
+}
+#ListOfIcons {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px; /* spacing between icons */
+  justify-content: center;
+}
+
+.Image-Icons {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* min-width to ensure it grows for longer labels */
+  min-width: 150px;
+  position: relative; /* if you want to keep pointer events or layering */
+}
+
+#ListOfIcons img {
+  width: 110px;
+  height: 110px;
+  border-radius: 5px;
+  background-color: white;
+  display: block;
+}
+
+#ListOfIcons .label {
+  margin-top: 10px;
+  color: white;
+  font-size: 1.2em;
+  white-space: nowrap;  /* keep text on one line */
+  text-align: center;
+  pointer-events: none;
+}
+.Image-Icons.animate {
+  animation: slideLeft 2s ease-out forwards;
 }
