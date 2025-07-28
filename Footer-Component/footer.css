@@ -18,7 +18,7 @@ footer {
   text-align: center;
   background-color: #B7773Eff;
   color: #F4DEB8ff;
-  padding: 7px;
+  padding: 7px; /*Problematic */
   width: 100%;
 }
 
