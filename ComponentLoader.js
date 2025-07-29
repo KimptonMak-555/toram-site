@@ -1,5 +1,5 @@
 let htmlComponents = [
-  { file: 'Footer-Component/footer.html', componentID: 'footer' }
+  { file: '/Footer-Component/footer.html', componentID: 'footer' }
 ];
 let currentComponents = []
 window.onload = function () {
