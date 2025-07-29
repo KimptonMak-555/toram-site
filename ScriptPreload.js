@@ -1,4 +1,4 @@
-let scripts = ["Home-Page/Home-ProgressBar.js","WeaponScript.js","ComponentLoader.js","AnimateOnView.js","ScrollStateScontroller.js","fontColorChanger.js"]
+let scripts = ["/Home-Page/Home-ProgressBar.js","/WeaponScript.js","/ComponentLoader.js","/AnimateOnView.js","/ScrollStateScontroller.js","/fontColorChanger.js"]
 
 window.onload = function preload() {
     element = document.getElementsByTagName("head");
@@ -7,5 +7,5 @@ window.onload = function preload() {
         scriptelement.src = script;
         element[0].appendChild(scriptelement);
     });
-    console.log("loadedscripts")
+    console.log("loadedscripts");
 }
