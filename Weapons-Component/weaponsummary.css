@@ -28,14 +28,15 @@ figcaption.weapons {
 .weaponTextOverlayArea {
   text-align: left;
   position:relative;
-  width:30%;
+  width:100%;
   margin:0.5em 1em;
 }
 
 .weaponsArea {
   text-align:center;
-  display:flex;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows:500px;
   flex-wrap: wrap;
-  align-content: space-between;
-  height: 850px;
+  height:800px;
 }
