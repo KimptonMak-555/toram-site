@@ -21,7 +21,6 @@ right:0; top:0;position:fixed;z-index:5;width: 150px;
 }
 #headerBgImage{
   left: 0;
-  height: 100%;
   width: 100%;
   z-index: -1;
   position: absolute;
@@ -61,7 +60,6 @@ right:0; top:0;position:fixed;z-index:5;width: 150px;
   position: fixed;
   top: 0;
   text-align: center;
-  background-color: #A1713C;
   color: #F4DEB8;
   padding: 7px;
   overflow: hidden;

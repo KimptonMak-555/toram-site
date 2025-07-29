@@ -10,19 +10,36 @@ html, body {
 }
 
 .content-wrap {
-  flex: 1; /* pushes footer to the bottom */
+  flex: 1;
 }
 
-/* Footer styles */
+
 footer {
+  position: relative;
   text-align: center;
-  background-color: #B7773Eff;
   color: #F4DEB8ff;
-  padding: 7px; /*Problematic */
   width: 100%;
+  overflow: hidden;
 }
 
 footer p {
+  position: relative;
+  z-index: 1;
   margin: 0;
   padding: 0;
+  text-shadow: 0 0 4px rgb(0, 0, 0);
+}
+footer a{
+  text-decoration: none;
+  color: white;
+}
+#footerBgImage {
+  margin-left: 3%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }

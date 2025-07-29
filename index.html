@@ -17,7 +17,8 @@
   <script src="WeaponScript.js"></script> 
   <script src="ComponentLoader.js"></script>
   <script src="AnimateOnView.js"></script>
-    <script src="ScrollStateScontroller.js"></script>
+  <script src="ScrollStateScontroller.js"></script>
+  <script src="fontColorChanger.js"></script>
 <body class=body>
   <!--potum gif-->
     <img src='resources/Potum-toram-nobg.webp' alt='Toram online mascott: Potum' class="PotumGiff">
@@ -25,7 +26,7 @@
     <div class="MainHeader">
       <img src="resources/toram_ico.jpg" class="icon" alt="Toram Online icon" id="leftTortamIcon">
       <div class="flex-row">
-        <img src="resources/top nav bg.jpg" id="headerBgImage">
+        <img src="resources/top nav.png" id="headerBgImage">
         <a class="box" href="/about.html">
           <img src="resources/info page icon.png" class="contents">
           <span class="contents">About</span>
@@ -68,7 +69,7 @@
                 </a>
               </li>
               <li>
-                <a onclick="LoadDynamicComponent('weaponsum', 'Weapons-Component/weaponsummary.html');run(1)">
+                <a onclick="LoadDynamicComponent('weaponsum', 'Weapons-Component/weaponsummary.html')">
                   <img src="resources/ui button.png" alt="Button"
                       onmouseover="this.src='resources/ui button hover.png'"
                       onmouseout="this.src='resources/ui button.png'">
