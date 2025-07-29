@@ -1,6 +1,6 @@
 
 
-document.addEventListener("componentLoaded", (eventData) => {
+document.addEventListener("DynamicComponentLoaded", (eventData) => {
 
 const target = document.getElementById('ListOfIcons');
 if(!target) return;

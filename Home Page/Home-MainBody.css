@@ -2,6 +2,10 @@
     margin-top: 8%; /*10 was a bit much*/
 }
 
+.icon {
+  width:64px;
+}
+
 .symbolsFont {
   font-family: cursive, Georgia, Arial;  /* Make use of with a symbols for text like ":"*/
 }

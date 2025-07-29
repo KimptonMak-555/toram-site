@@ -1,6 +1,12 @@
 var stylesheets = [
-    "/global_styles.css","/Footer-Component/footer.css","About-Component/about.css","Weapons-Component/weaponsummary.css",
-    "Home-Page/Home-FloatingHeader.css","Home-Page/Home-MainBody.css","Home-Page/Home-Scroll.css"
+    "global_styles.css",
+    "Footer-Component/footer.css",
+    "About-Component/about.css",
+    "Weapons-Component/weaponsummary.css",
+    "LevelUpSlider-Component/level-up.css",
+    "Home Page/Home-MainBody.css",
+    "Home Page/Home-Scroll.css",
+    "NavigationHeader-Component/nav-bar.css",
 ];
 
 function preload(){
@@ -10,14 +16,14 @@ function preload(){
         link.href = stylesheet;
         link.type = "text/css";
         link.rel = "stylesheet";
-        head.appendChild(link)
+        link.onload = () => console.log(`Loaded: ${stylesheet}`);
+        link.onerror = () => console.error(`Failed to load: ${stylesheet}`);
+        head.appendChild(link);
     });
-   console.log('here')
 }
 
 if (document.readyState !== "loading"){
-    preload()
-}
-else {
+    preload();
+} else {
     document.addEventListener('DOMContentLoaded', preload);
 }

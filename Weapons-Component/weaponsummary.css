@@ -2,9 +2,9 @@
  Display:none;
  color:#FEEDB7ff;
  position:relative;
- bottom: 50px;
+ bottom: 100px;
  text-align: center;
- font-size:2.3vw;
+ font-size:2vw;
  font-family: 'Toram';
 }
 
@@ -35,8 +35,8 @@ figcaption.weapons {
 .weaponsArea {
   text-align:center;
   display:grid;
-  grid-template-columns: 30% 30% 30%;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows:500px;
-  justify-content: center;
-  overflow-x:hidden;
+  flex-wrap: wrap;
+  height:800px;
 }

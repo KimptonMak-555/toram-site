@@ -10,7 +10,7 @@ function Percentage(){
 function UpdateScroll() {
     let percentage = Percentage(); // should return a value from 0 to 1
     let imgforeground = document.getElementById("levelUpProgress");
-    let percentageText = document.getElementById("levelUppercentage");
+    let percentageText = document.getElementById("levelUpPercentage");
 
     let percentValue = Math.trunc(percentage * 100);
 

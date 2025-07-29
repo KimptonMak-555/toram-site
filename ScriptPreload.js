@@ -1,11 +1,16 @@
-let scripts = ["/Home-Page/Home-ProgressBar.js","/WeaponScript.js","/ComponentLoader.js","/AnimateOnView.js","/ScrollStateScontroller.js","/fontColorChanger.js"]
+let scripts = ["LevelUpSlider-Component/Scroll-ProgressBar.js","/WeaponScript.js"
+    ,"/AnimateOnView.js","ScrollStateScontroller.js","/fontColorChanger.js",
+    "/Weapons-Component/WeaponSkillsAnimation.js"]
+    
+let scriptsLoaded = false;
 
-window.onload = function preload() {
-    element = document.getElementsByTagName("head");
+document.addEventListener("componentLoaded", (eventData) => {
+    if(scriptsLoaded)return;
+    element = document.getElementsByTagName("body");
     scripts.forEach((script)=>{
         let scriptelement = document.createElement("script");
         scriptelement.src = script;
         element[0].appendChild(scriptelement);
     });
-    console.log("loadedscripts");
-}
+    scriptsLoaded =true;
+});

@@ -11,30 +11,26 @@ function SetWeaponInteractionEvents() {
     figure.addEventListener("mouseenter", function (event) {
       let hoveredElement = event.currentTarget;
       let image = hoveredElement.querySelector(weaponId);
-      let text = hoveredElement.querySelector(".overImageText")
       if (image) {
         image.dataset.originalSrc = image.src;
         image.src = `/Weapons-Component/resources/${image.id}.gif`;
         image.style.opacity = 0.65;
-        text.style.display = "block";
       }
     });
     
     figure.addEventListener("mouseleave", function (event) {
       let hoveredElement = event.currentTarget;
       let image = hoveredElement.querySelector(weaponId);
-      let text = hoveredElement.querySelector(".overImageText")
       if (image && image.dataset.originalSrc) {
         image.src = image.dataset.originalSrc;
         image.style.opacity = 1;
         image.style.width = "100%";
-        text.style.display = "none";
       }
     });
   });
 
 } 
-document.addEventListener("componentLoaded", (eventData) => {
+document.addEventListener("DynamicComponentLoaded", (eventData) => {
   
   if(eventData.detail.component.componentID!=="weaponsum") return;
   if(eventsLoaded) return;
