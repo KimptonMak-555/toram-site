@@ -47,25 +47,27 @@ let i = this.querySelectorAll("img.weapons");
 let x = this.getElementsByClassName("overImageText");
 let img = i[0];
 imgsrc = img.src;
+imgwidth = img.width;
+imgheight = img.height;
 let text = x[0];
 switch (img.id){
 case "sword":
-  img.src = "/Weapons/resources/sword.gif";
+  img.src = "/Weapons-Component/resources/Sword.gif";
   break;
 case "bow":
-  img.src = "/Weapons/resources/bow.gif";
+  img.src = "/Weapons-Component/resources/bow.gif";
   break;
 case "staff":
-  img.src = "/Weapons/resources/staff.gif";
+  img.src = "/Weapons-Component/resources/staff.gif";
   break;
 case "halberd":
-  img.src = "/Weapons/resources/halberd.gif";
+  img.src = "/Weapons-Component/resources/halberd.gif";
   break;
 case "knuckles":
-  img.src = "/Weapons/resources/knuckles.gif";
+  img.src = "/Weapons-Component/resources/knuckles.gif";
   break
 case "katana":
-  img.src = "/Weapons/resources/katana.gif";
+  img.src = "/Weapons-Component/resources/katana.gif";
   break;
 }
 img.style.opacity = 0.65;
@@ -79,6 +81,7 @@ function HideClassText() {
  let text = x[0];
  img.style.opacity = 1;
  img.src = imgsrc;
+ img.style.width = "100%";
  text.style.display = "none";
 }
 

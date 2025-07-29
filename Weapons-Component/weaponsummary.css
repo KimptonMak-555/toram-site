@@ -1,10 +1,10 @@
 .overImageText {
  Display:none;
  color:#FEEDB7ff;
- position:absolute;
- bottom: 50px;
+ position:relative;
+ bottom: 100px;
  text-align: center;
- font-size:3vw;
+ font-size:2vw;
  font-family: 'Toram';
 }
 
@@ -14,16 +14,15 @@ figure.weapons {
 
 
 img.weapons {
-  width:100%;
+  width: 100%;
   position:relative;
-  left:10px;
   margin:auto;
+  display:block;
   border-radius : 35px;
 }
 
 figcaption.weapons {
   text-align:center;
-
 }
 
 .weaponTextOverlayArea {
@@ -31,11 +30,12 @@ figcaption.weapons {
   position:relative;
   width:30%;
   margin:0.5em 1em;
-  
 }
 
 .weaponsArea {
   text-align:center;
   display:flex;
   flex-wrap: wrap;
+  align-content: space-between;
+  height: 850px;
 }
