@@ -36,6 +36,6 @@ figcaption.weapons {
   text-align:center;
   display:flex;
   flex-wrap: wrap;
-  align-content: space-between;
+  align-content: baseline;
   height: 850px;
 }
