@@ -1,13 +1,7 @@
-let htmlComponents = [
-  { file: 'Footer-Component/footer.html', componentID: 'footer' }
-];
+
 let currentComponents = []
-window.onload = function () {
-  LoadHtml(htmlComponents);
-};
 
-
-function LoadHtml(components) {
+function LoadComponentList(components) {
   components.forEach(component => {
     LoadComponent(component);
   });
@@ -58,7 +52,7 @@ function LoadDynamicComponent(componentID, componentHtml) {
   }
 }
 
-function RemoveAllComponents(){
+function RemoveAllDynamicComponents(){
   currentComponents.forEach(component => {
       UnloadDynamicComponent(component.componentID)
     });

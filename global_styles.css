@@ -8,7 +8,7 @@
   background-color: #ffffff;
   color: #DFBC85ff;
   font-family: 'Toram'; 
-  background-image: url("/resources/Toram_BASE3_blur_tint.jpg"); /* Swap out to a faded out ver. */ /*Done*/
+  background-image: url("/NonSpecificResources/Toram_BASE3_blur_tint.jpg"); /* Swap out to a faded out ver. */ /*Done*/
   background-attachment:fixed;
   background-repeat:no-repeat;
 }

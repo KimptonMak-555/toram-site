@@ -7,54 +7,35 @@
     <link href="Footer-Component/footer.css" rel="stylesheet" type="text/css" media="all">
     <link href="About-Component/about.css" rel="stylesheet" type="text/css" media="all">
     <link href="Weapons-Component/weaponsummary.css" rel="stylesheet" type="text/css" media="all">
-    <link href="Home Page/Home-FloatingHeader.css" rel="stylesheet" type="text/css" media="all">
+    <link href="NavigationHeader-Component/nav-bar.css" rel="stylesheet" type="text/css" media="all">
+    <link href="LevelUpSlider-Component/level-up.css" rel="stylesheet" type="text/css" media="all">
     <link href="Home Page/Home-MainBody.css" rel="stylesheet" type="text/css" media="all">
     <link href="Home Page/Home-Scroll.css" rel="stylesheet" type="text/css" media="all">
     <link href="global_styles.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/resources/Home icon.png" rel="icon">
+    <link href="/Home Page/resources/Home icon.png" rel="icon">  
   </head>
-  <script src="Home Page/Home-ProgressBar.js"></script>
+  <script src="LevelUpSlider-Component/Home-ProgressBar.js"></script>
   <script src="WeaponScript.js"></script> 
   <script src="ComponentLoader.js"></script>
   <script src="AnimateOnView.js"></script>
   <script src="ScrollStateScontroller.js"></script>
   <script src="fontColorChanger.js"></script>
+  <script src="BaseCompentLoader.js"></script>
+  <script src="Weapons-Component/WeaponSkillsAnimation.js"></script>
 <body class=body>
-  <!--potum gif-->
-    <img src='resources/Potum-toram-nobg.webp' alt='Toram online mascott: Potum' class="PotumGiff">
-    <!--Top floating nav-->
-    <div class="MainHeader">
-      <img src="resources/toram_ico.jpg" class="icon" alt="Toram Online icon" id="leftTortamIcon">
-      <div class="flex-row">
-        <img src="resources/top nav.png" id="headerBgImage">
-        <a class="box" href="/about.html">
-          <img src="resources/info page icon.png" class="contents">
-          <span class="contents">About</span>
-        </a>
-        <a class="box" href="/weapon_classes.html">
-          <img src="resources/fighting page icon.png" class="contents">
-          <span class="contents">Weapon Classes</span>
-        </a>
-        <a class="box" href="/game_systems.html">
-          <img src="resources/inventory icon.png" class="contents">
-          <span class="contents">Game Systems</span>
-        </a>
-      </div>
-    </div>
-    <div class="image-container">
-      <span id="levelUppercentage">......</span>
-      <img id="levelUpProgress" src="resources/level up background.png" class="top-image">
-      <img src="resources/level up gimp.png" class="fill-image">
-    </div>
+    <!--potum gif-->
+    <img src='NonSpecificResources/Potum-toram-nobg.webp' alt='Toram online mascott: Potum' class="PotumGiff">
+    
+    <div id="navbar"></div>
+    <div id="levelup"></div>
     <!--Main Body-->
     <div id="content" class="MainBody">
       <div id="scroll">
-        
-        <img id="ScrollTop" src="resources/scroll top.png" alt="Background scroll">
-        <img id="ScrollBody" src="resources/scroll body.png" alt="Background scroll">
+        <img id="ScrollTop" src="/Home Page/resources/scroll top.png" alt="Background scroll">
+        <img id="ScrollBody" src="/Home Page/resources/scroll body.png" alt="Background scroll">
         <div>
-            <img id="ScrollBottom" src="resources/scroll bottom.png" alt="Background scroll">
-            <img id="ScrollSeal" src="resources/scroll seal.png" onclick="OpenScroll()">
+            <img id="ScrollBottom" src="/Home Page/resources/scroll bottom.png" alt="Background scroll">
+            <img id="ScrollSeal" src="/Home Page/resources/scroll seal.png" onclick="OpenScroll()">
         </div>
         <div id="Scroll-Contents">
           <h1 class="head reveal-text">Asobimo Toram Online</h1>
@@ -62,25 +43,25 @@
           <ul id="scroll-list">
               <li>
                 <a onclick="LoadDynamicComponent('about','About-Component/about.html')">
-                  <img src="resources/ui button.png" alt="Button"
-                      onmouseover="this.src='resources/ui button hover.png'"
-                      onmouseout="this.src='resources/ui button.png'">
+                  <img src="NonSpecificResources/ui button.png"  alt="Button"
+                      onmouseover="this.src='/NonSpecificResources/ui button hover.png'"
+                      onmouseout="this.src='/NonSpecificResources/ui button.png'">
                   <span class="label">About</span>
                 </a>
               </li>
               <li>
                 <a onclick="LoadDynamicComponent('weaponsum', 'Weapons-Component/weaponsummary.html')">
-                  <img src="resources/ui button.png" alt="Button"
-                      onmouseover="this.src='resources/ui button hover.png'"
-                      onmouseout="this.src='resources/ui button.png'">
+                  <img src="NonSpecificResources/ui button.png"  alt="Button"
+                      onmouseover="this.src='/NonSpecificResources/ui button hover.png'"
+                      onmouseout="this.src='/NonSpecificResources/ui button.png'">
                   <span class="label">Weapon Area</span>
                 </a>
               </li>
               <li>
                 <a href="/about.html">
-                  <img src="resources/ui button.png" alt="Button"
-                      onmouseover="this.src='resources/ui button hover.png'"
-                      onmouseout="this.src='resources/ui button.png'">
+                  <img src="/NonSpecificResources/ui button.png" alt="Button"
+                      onmouseover="this.src='/NonSpecificResources/ui button hover.png'"
+                      onmouseout="this.src='/NonSpecificResources/ui button.png'">
                   <span class="label" style="width:140px;text-align:center">Game  System</span>
                 </a>
               </li>
