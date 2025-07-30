@@ -16,7 +16,8 @@ async function LoadDynamicElements(parentElementID,templateDirectory,parentOfDyn
     // Apply dynamic properties
     childTagGroups[i].forEach((dataObj) => {
 
-      const childTag = parentElement.querySelector(`.${dataObj.className}`);
+      const childTag = parentElement.querySelector(dataObj.className);
+
       if (!childTag) return;
 
       if (dataObj.property in childTag) {

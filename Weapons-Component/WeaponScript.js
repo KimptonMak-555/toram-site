@@ -6,15 +6,19 @@ function SetElementGroups() {
   let componentDirectory = '/Weapons-Component/resources/';
   for (let i = 0; i < 6; i++) {
     weaponGroups.push([
-      { className: 'weapons', property: 'id', value: weaponNames[i]},
-      { className: 'weapons', property: 'src', value: componentDirectory+'weapon_bg.png' },
-      { className: 'weaponAura', property: 'src', value: componentDirectory + weaponNames[i] + '_Aura.png' },
-      { className: 'weaponIcon', property: 'src', value: componentDirectory + weaponNames[i] + '_Icon.png' },
-      { className: 'figcaptionText', property: 'innerHTML', value: `Weapon Class ${i + 1}: ${weaponNames[i]}` }
+      { className: '.weapons', property: 'id', value: weaponNames[i]},
+      { className: '.weapons', property: 'src', value: componentDirectory+'weapon_bg.png' },
+      { className: '.weaponAura', property: 'src', value: componentDirectory + weaponNames[i] + '_Aura.png' },
+      { className: '.weaponIcon', property: 'src', value: componentDirectory + weaponNames[i] + '_Icon.png' },
+      { className: '.figcaptionText', property: 'innerHTML', value: `Weapon Class ${i + 1}: ${weaponNames[i]}` }
     ]);
   }
   return weaponGroups;
 }
+document.addEventListener(componentRemovalEvent, async (eventData) => {
+  if(eventData.detail.componentID!=="weaponsum") return;
+  eventLoaded = false;
+});
 
 document.addEventListener(dynamicComponentEvent, async (eventData) => {
     if(eventData.detail.component.componentID!=="weaponsum") return;

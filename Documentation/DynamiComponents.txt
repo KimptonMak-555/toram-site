@@ -1,0 +1,3 @@
+Dynamic compoonents require a bool to keep track of the event call state, this prevents
+calling the events contantly and lowering performance. This is combined with another event call
+when a dynamic component is removed, which resets the event call state and allows it to be called again

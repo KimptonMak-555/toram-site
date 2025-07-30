@@ -1,0 +1,9 @@
+Since having lists of divs with very similar structure makes maintaing our html tedious.
+I opted for a solution that dynamically loads each of the html bundles and their data when required.
+Key notes:
+A unique method (SetElements()) must be made for each use usage of this system, to create a list 
+of dynamic data that will be used to populate each element of the bundle.
+The reason why it's unique is because any component that uses the LoadDynamicElements()
+method isnt garunteed to have the same data that it wants to fill it's html bundle with.
+Another requirement is that the html bundle should be in it's own script, this is for better
+maintainability and makes it easier to debug, 

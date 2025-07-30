@@ -2,7 +2,7 @@
 let currentComponents = []
 var dynamicComponentEvent = 'DynamicComponentLoaded'
 var componentEvent = 'ComponentLoaded'
-
+var componentRemovalEvent = 'componentRemoved'
 function LoadComponentList(components) {
   components.forEach(component => {
     LoadComponent(component);
@@ -25,6 +25,9 @@ function UnloadDynamicComponent(componentID){
     let target = document.getElementById(componentID)
     target.innerHTML = "";
     currentComponents = currentComponents.filter(component => component.componentID !== componentID);
+    document.dispatchEvent(new CustomEvent(componentRemovalEvent, {
+        detail: { componentID: componentID }
+      }));
   }
 }
 

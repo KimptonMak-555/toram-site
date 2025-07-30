@@ -8,35 +8,28 @@ let gameIcons = [
 
 let gameIconEventLoaded = false;
 
+document.addEventListener(componentRemovalEvent, async (eventData) => {
+  if(eventData.detail.componentID!=="about") return;
+  gameIconEventLoaded = false;
+});
+
 document.addEventListener(dynamicComponentEvent, async (eventData) => {
   if(eventData.detail.component.componentID!=="about") return;
   if (gameIconEventLoaded) return;
   gameIconEventLoaded = true;
-
-  const listParent = document.getElementById('ListOfIcons');
-
-  for (let i = 0; i < gameIcons.length; i++) {
-    const res = await fetch('About-Component/resources/game-Icon.html');
-    const html = await res.text();
-
-    // Convert string to actual DOM node
-    const temp = document.createElement('div');
-    temp.innerHTML = html.trim();
-
-    const iconElement = temp.querySelector('.Image-Icons');
-    if (!iconElement) continue;
-
-    // Bind data immediately
-    const img = iconElement.querySelector('img');
-    const span = iconElement.querySelector('span');
-
-    if (img && span && gameIcons[i]) {
-      img.src = gameIcons[i].src;
-      span.innerHTML = gameIcons[i].displayText;
-    }
-
-    // Append the new element
-    listParent.appendChild(iconElement);
-  }
+  const childTagGroups = SetGameIconGroups();
+  await LoadDynamicElements('ListOfIcons','About-Component/game-Icon.html'
+    ,'.Image-Icons',childTagGroups);
   AnimateOnScroll('ListOfIcons','.Image-Icons','animate',300);
 });
+
+function SetGameIconGroups() {
+  let gameIconGroups = [];
+  for (let i = 0; i < gameIcons.length; i++) {
+    gameIconGroups.push([
+      { className: 'img', property: 'src', value: gameIcons[i].src},
+      { className: 'span', property: 'innerHTML', value: gameIcons[i].displayText},
+    ]);
+  }
+  return gameIconGroups;
+}
