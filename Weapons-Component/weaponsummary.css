@@ -21,6 +21,42 @@ img.weapons {
   border-radius : 35px;
 }
 
+img.weaponAura{
+  position: absolute;
+  top:130px;
+  left: 35%;
+  animation-name: AuraWobble;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+} 
+
+@keyframes AuraWobble {
+  0% {transform: skewX(0deg);}
+  25% {transform: skewX(90deg);} 
+  50% {transform: skewX(120deg);} 
+  75% {transform: skewX(60deg); }
+  100% {transform: skewX(0deg);}
+}
+
+@keyframes Weaponspin {
+  0% {transform:rotate(initial)}
+  100% {transform: rotate(360deg);}
+}
+
+img.weaponIcon {
+  width:initial;
+  position:absolute;
+  top:125px;
+  left:35%;
+  transform-origin: 50% 50%;
+  animation-name: Weaponspin;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
 figcaption.weapons {
   text-align:center;
 }
@@ -35,8 +71,8 @@ figcaption.weapons {
 .weaponsArea {
   text-align:center;
   display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 30% 30% 30%;
   grid-template-rows:500px;
-  flex-wrap: wrap;
+  justify-content: center;
   height:800px;
 }
