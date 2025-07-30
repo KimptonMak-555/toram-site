@@ -2,7 +2,7 @@
   z-index: 3;
   top:7%;
   position: fixed;
-  width: 85%; /* Match your image width */
+  width: 100%; /* Match your image width */
 /* Match your image height */
 }
 .image-container img {
