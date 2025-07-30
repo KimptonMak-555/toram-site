@@ -8,10 +8,12 @@
  font-family: 'Toram';
 }
 
-figure.weapons {
+.figureForWeapons {
   margin: 1em;
 }
-
+span.weapons{
+  font-family:Arial
+}
 
 img.weapons {
   width: 100%;
@@ -55,7 +57,7 @@ img.weaponIcon {
   animation-timing-function: linear;
 }
 
-figcaption.weapons {
+.figcaptionText{
   text-align:center;
 }
 
@@ -66,7 +68,7 @@ figcaption.weapons {
   margin:0.5em 1em;
 }
 
-.weaponsArea {
+.weapons {
   text-align:center;
   display:grid;
   grid-template-columns: 30% 30% 30%;
