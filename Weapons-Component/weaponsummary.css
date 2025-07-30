@@ -26,17 +26,16 @@ img.weaponAura{
   top:130px;
   left: 35%;
   animation-name: AuraWobble;
-  animation-duration: 1s;
+  animation-duration: 3s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-direction: alternate;
+  animation-direction: forward;
 } 
 
 @keyframes AuraWobble {
-  0% {transform: skewX(0deg);scale:initial}
-  25% {transform: skewX(15deg);scale:2} 
-  75% {transform: skewX(-15deg); scale:initial}
-  100% {transform: skewX(0deg);scale: 1.5;}
+  0% {transform: rotate(initial);}
+  50% {transform: rotate(180deg);}
+  
 }
 
 @keyframes Weaponspin {
