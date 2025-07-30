@@ -4,7 +4,7 @@ let scripts = ["LevelUpSlider-Component/Scroll-ProgressBar.js","Weapons-Componen
     
 let scriptsLoaded = false;
 
-document.addEventListener("componentLoaded", (eventData) => {
+document.addEventListener(componentEvent, (eventData) => {
     if(scriptsLoaded)return;
     element = document.getElementsByTagName("body");
     scripts.forEach((script)=>{

@@ -1,8 +1,33 @@
-weaponNames = ["sword","bow","halberd","knuckles","staff","katana",]
-var eventsLoaded = false;
-function SetWeaponInteractionEvents() {
+let eventLoaded = false;
+var weaponNames = ["sword","bow","halberd","knuckles","staff","katana"]
 
-  let weaponFigures = document.querySelectorAll("figure.weapons");
+function SetElementGroups() {
+  let weaponGroups = [];
+  let componentDirectory = '/Weapons-Component/resources/';
+  for (let i = 0; i < 6; i++) {
+    weaponGroups.push([
+      { className: 'weapons', property: 'id', value: weaponNames[i]},
+      { className: 'weapons', property: 'src', value: componentDirectory+'weapon_bg.png' },
+      { className: 'weaponAura', property: 'src', value: componentDirectory + weaponNames[i] + '_Aura.png' },
+      { className: 'weaponIcon', property: 'src', value: componentDirectory + weaponNames[i] + '_Icon.png' },
+      { className: 'figcaptionText', property: 'innerHTML', value: `Weapon Class ${i + 1}: ${weaponNames[i]}` }
+    ]);
+  }
+  return weaponGroups;
+}
+
+document.addEventListener(dynamicComponentEvent, async (eventData) => {
+    if(eventData.detail.component.componentID!=="weaponsum") return;
+    if (eventLoaded) return;
+    eventLoaded = true;
+    const childTagGroups = SetElementGroups();
+    await LoadDynamicElements('weaponCardParent','Weapons-Component/WeaponCard.html','.weaponTextOverlayArea',childTagGroups);
+    SetWeaponInteractionEvents();
+});
+
+function SetWeaponInteractionEvents() {
+  
+  let weaponFigures = document.querySelectorAll(".figureForWeapons");
 
   weaponFigures.forEach((figure, index) => {
 
@@ -28,15 +53,4 @@ function SetWeaponInteractionEvents() {
       }
     });
   });
-
 } 
-document.addEventListener("DynamicComponentLoaded", (eventData) => {
-  
-  if(eventData.detail.component.componentID!=="weaponsum") return;
-  if(eventsLoaded) return;
-  SetWeaponInteractionEvents();
-  eventsLoaded = true;
-});
-
-
-

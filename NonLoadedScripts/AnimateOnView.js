@@ -1,12 +1,10 @@
-//this can now be used anywhere for animations OnScroll
-function AddOnScrollEvent(scrollTargetID,classToBeAnimted,animationName,delay){
-
-document.addEventListener("DynamicComponentLoaded", (eventData) => {
-
-  const target = document.getElementById(scrollTargetID);
-  if(!target) return;
-  if(!eventData.detail.component.componentElement.contains(target))return;
-  //wait for view to scroll to the icons and then displays those icons sequentially
+function AnimateOnScroll(scrollTargetID,classToBeAnimted,animationName,delay){
+    //wait for view to scroll to the icons and then displays those icons sequentially
+    const target = document.getElementById(scrollTargetID);
+    if(!target) {
+      console.log(scrollTargetID+": doesnt exist")
+      return;
+    }
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -23,6 +21,4 @@ document.addEventListener("DynamicComponentLoaded", (eventData) => {
     });
 
     observer.observe(target);
-  });
-
 }

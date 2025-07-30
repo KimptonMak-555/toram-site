@@ -1,13 +1,11 @@
 
 let currentComponents = []
+var dynamicComponentEvent = 'DynamicComponentLoaded'
+var componentEvent = 'ComponentLoaded'
 
 function LoadComponentList(components) {
   components.forEach(component => {
-    LoadComponent(component).then(() => {
-        document.dispatchEvent(new CustomEvent("componentLoaded", {
-          detail: { component: component }
-        }));
-    });
+    LoadComponent(component);
   });
 }
 
@@ -16,6 +14,9 @@ function LoadComponent(component) {
     .then(res => res.text())
     .then(html => {
       document.getElementById(component.componentID).innerHTML = html;
+      document.dispatchEvent(new CustomEvent(componentEvent, {
+        detail: { component: component }
+      }));
     });
 }
 
@@ -40,7 +41,7 @@ function LoadDynamicComponent(componentID, componentHtml) {
       }
       LoadComponent(component).then(() => {
         //this is an event that other scripts can use when they wanna do stuff once a component has been loaded
-        document.dispatchEvent(new CustomEvent("DynamicComponentLoaded", {
+        document.dispatchEvent(new CustomEvent(dynamicComponentEvent, {
           detail: { component: dynamicComponent }
         }));
         currentComponents.push(dynamicComponent);
