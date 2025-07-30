@@ -1,6 +1,6 @@
-let scripts = ["LevelUpSlider-Component/Scroll-ProgressBar.js","/WeaponScript.js"
-    ,"/AnimateOnView.js","ScrollStateScontroller.js","/fontColorChanger.js",
-    "/Weapons-Component/WeaponSkillsAnimation.js"]
+let scripts = ["LevelUpSlider-Component/Scroll-ProgressBar.js","Weapons-Component/WeaponScript.js"
+    ,"NonLoadedScripts/AnimateOnView.js","Home Page/ScrollStateScontroller.js","Home Page/fontColorChanger.js",
+    "/Weapons-Component/WeaponSkillsAnimation.js","About-Component/GameIconAnimation.js"]
     
 let scriptsLoaded = false;
 
