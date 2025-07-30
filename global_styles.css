@@ -1,6 +1,6 @@
 @font-face {
   font-family: Toram;
-  src: url('resources/font/moblaztrial.otf');
+  src: url('/NonSpecificResources/font/moblaztrial.otf'),url(/NonSpecificResources/font/moblaztrial.ttf);
 }
 
 .body {

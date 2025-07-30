@@ -41,7 +41,11 @@ function SetWeaponInteractionEvents() {
       let hoveredElement = event.currentTarget;
       let image = hoveredElement.querySelector(weaponId);
       if (image) {
+        let icon = hoveredElement.querySelector(".weaponIcon");
+        let aura = hoveredElement.querySelector(".weaponAura");
         image.dataset.originalSrc = image.src;
+        icon.style.display = "none";
+        aura.style.display = "none";
         image.src = `/Weapons-Component/resources/${image.id}.gif`;
         image.style.opacity = 0.65;
       }
@@ -51,7 +55,11 @@ function SetWeaponInteractionEvents() {
       let hoveredElement = event.currentTarget;
       let image = hoveredElement.querySelector(weaponId);
       if (image && image.dataset.originalSrc) {
+        let icon = hoveredElement.querySelector(".weaponIcon");
+        let aura = hoveredElement.querySelector(".weaponAura");
         image.src = image.dataset.originalSrc;
+        icon.style.display = "initial";
+        aura.style.display = "initial";
         image.style.opacity = 1;
         image.style.width = "100%";
       }
