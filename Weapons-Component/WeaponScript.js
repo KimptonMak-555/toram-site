@@ -6,14 +6,29 @@ function SetElementGroups() {
   let componentDirectory = '/Weapons-Component/resources/';
   for (let i = 0; i < 6; i++) {
     weaponGroups.push([
-      { className: '.weapons', property: 'id', value: weaponNames[i]},
-      { className: '.weapons', property: 'src', value: componentDirectory+'weapon_bg.png' },
+      { className: '.weapons', property: 'id', value: weaponNames[i] },
+      { className: '.weapons', property: 'src', value: componentDirectory + 'weapon_bg.png' },
       { className: '.weaponAura', property: 'src', value: componentDirectory + weaponNames[i] + '_Aura.png' },
-      { className: '.weaponIcon', property: 'src', value: componentDirectory + weaponNames[i] + '_Icon.png' },
+      { className: '.weaponIcon', property: 'src', value: componentDirectory + weaponNames[i] + '_Icon_noAura.png' },
+      { className: '.figureForWeapons', property: 'id', value: weaponNames[i]+'WeaponParent' },
       { className: '.figcaptionText', property: 'innerHTML', value: `Weapon Class ${i + 1}: ${weaponNames[i]}` }
     ]);
   }
   return weaponGroups;
+}
+async function loadWeaponSkills(){
+  let componentDirectory = '/Weapons-Component/resources/';
+  let skillGroups = [];
+  for (let i = 0; i < 6; i++) {
+      skillGroups.push([
+        { className: '.weaponSkill1', property: 'src', value:`${componentDirectory}${weaponNames[i]}skill1.png` },
+        { className: '.weaponSkill2', property: 'src', value:`${componentDirectory}${weaponNames[i]}skill2.png` },
+        { className: '.weaponSkill3', property: 'src', value:`${componentDirectory}${weaponNames[i]}skill3.png` },
+      ]);
+      await LoadDynamicElements(weaponNames[i]+'WeaponParent','Weapons-Component/weaponSkills.html'
+      ,'.weaponSkillsHolder',skillGroups);
+      skillGroups = [];
+  }
 }
 document.addEventListener(componentRemovalEvent, async (eventData) => {
   if(eventData.detail.componentID!=="weaponsum") return;
@@ -26,6 +41,7 @@ document.addEventListener(dynamicComponentEvent, async (eventData) => {
     eventLoaded = true;
     const childTagGroups = SetElementGroups();
     await LoadDynamicElements('weaponCardParent','Weapons-Component/WeaponCard.html','.weaponTextOverlayArea',childTagGroups);
+    await loadWeaponSkills();
     SetWeaponInteractionEvents();
 });
 

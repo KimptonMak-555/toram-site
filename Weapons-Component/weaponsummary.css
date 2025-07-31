@@ -8,13 +8,6 @@
  font-family: 'Toram';
 }
 
-/* .figureForWeapons {
-
-} */
-span.weapons{
-  font-family:Arial
-}
-
 img.weapons {
   width: 100%;
   position:relative;
@@ -23,7 +16,13 @@ img.weapons {
   height:auto;
   border-radius : 35px;
 }
-
+img.weaponIcon{
+        width: initial;
+      position: absolute;
+      top: 120px;
+      left: 35%;
+      transform-origin: 50% 50%;
+}
 img.weaponAura{
   position: absolute;
   top:120px;
@@ -39,23 +38,6 @@ img.weaponAura{
   0% {transform: rotate(initial);transform: scaleX(1);}
   50% {transform: rotate(180deg);}
   
-}
-
-@keyframes Weaponspin {
-  0% {transform:rotate(initial)}
-  100% {transform: rotate(360deg);}
-}
-
-img.weaponIcon {
-  width:initial;
-  position:absolute;
-  top:120px;
-  left:35%;
-  transform-origin: 50% 50%;
-  animation-name: Weaponspin;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
 }
 
 .figcaptionText{

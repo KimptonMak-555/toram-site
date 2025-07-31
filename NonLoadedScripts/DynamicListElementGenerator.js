@@ -27,8 +27,10 @@ async function LoadDynamicElements(parentElementID,templateDirectory,parentOfDyn
       }
 
       if (dataObj.property in childTag) {
+       // console.log(dataObj.property + ' was found')
         childTag[dataObj.property] = dataObj.value;
       } else {
+        //        console.log(dataObj.property + ' was added')
         childTag.setAttribute(dataObj.property, dataObj.value);
       }
     });
