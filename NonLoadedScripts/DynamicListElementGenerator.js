@@ -12,13 +12,19 @@ async function LoadDynamicElements(parentElementID,templateDirectory,parentOfDyn
 
     const parentElement = temp.querySelector(parentOfDynamicElement);
 
-    if (!parentElement) continue;
+    if (!parentElement){
+        console.log(parentOfDynamicElement+" not found");
+        continue;
+    } 
     // Apply dynamic properties
     childTagGroups[i].forEach((dataObj) => {
 
       const childTag = parentElement.querySelector(dataObj.className);
 
-      if (!childTag) return;
+      if (!childTag) {
+        console.log(dataObj.className + ' class not found')
+        return;
+      }
 
       if (dataObj.property in childTag) {
         childTag[dataObj.property] = dataObj.value;
