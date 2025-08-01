@@ -10,17 +10,26 @@ async function LoadDynamicElements(parentElementID,templateDirectory,parentOfDyn
     temp.innerHTML = html.trim();
 
     const parentElement = temp.querySelector(parentOfDynamicElement);
-    if (!parentElement) continue;
+
+    if (!parentElement){
+        console.log(parentOfDynamicElement+" not found");
+        continue;
+    } 
     // Apply dynamic properties
     childTagGroups[i].forEach((dataObj) => {
 
       const childTag = parentElement.querySelector(dataObj.className);
 
-      if (!childTag) return;
+      if (!childTag) {
+        console.log(dataObj.className + ' class not found')
+        return;
+      }
 
       if (dataObj.property in childTag) {
+       // console.log(dataObj.property + ' was found')
         childTag[dataObj.property] = dataObj.value;
       } else {
+        //        console.log(dataObj.property + ' was added')
         childTag.setAttribute(dataObj.property, dataObj.value);
       }
     });
