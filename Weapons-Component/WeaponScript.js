@@ -8,6 +8,7 @@ function SetElementGroups() {
     weaponGroups.push([
       { className: '.weapons', property: 'id', value: weaponNames[i] },
       { className: '.weapons', property: 'src', value: componentDirectory + 'weapon_bg.png' },
+      {className:".weaponSkillsParent", property:"id", value:`${weaponNames[i]}weaponSkillsParent`},
       { className: '.weaponAura', property: 'src', value: componentDirectory + weaponNames[i] + '_Aura.png' },
       { className: '.weaponIcon', property: 'src', value: componentDirectory + weaponNames[i] + '_Icon_noAura.png' },
       { className: '.figureForWeapons', property: 'id', value: weaponNames[i]+'WeaponParent' },
@@ -25,7 +26,7 @@ async function loadWeaponSkills(){
         { className: '.weaponSkill2', property: 'src', value:`${componentDirectory}${weaponNames[i]}skill2.png` },
         { className: '.weaponSkill3', property: 'src', value:`${componentDirectory}${weaponNames[i]}skill3.png` },
       ]);
-      await LoadDynamicElements(weaponNames[i]+'WeaponParent','Weapons-Component/weaponSkills.html'
+      await LoadDynamicElements(weaponNames[i]+'weaponSkillsParent','Weapons-Component/weaponSkills.html'
       ,'.weaponSkillsHolder',skillGroups);
       skillGroups = [];
   }

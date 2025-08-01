@@ -40,6 +40,12 @@ img.weaponAura{
   
 }
 
+@keyframes weaponSkillsAnim{
+  0% {translate: 0%;}
+  50% {translate: -30% -50%;}
+  100%{translate: -60% -100%;}
+}
+
 .figcaptionText{
   text-align:center;
 }
@@ -59,3 +65,51 @@ img.weaponAura{
   justify-content: center;
   height:800px;
 }
+
+.weaponSkillsParent{
+  display:inline-block;
+  position: relative;
+  z-index: 2;
+  top: 100px;
+  left:20%;
+}
+
+.weaponSkillsHolder{
+  position: absolute;
+  display:block ;
+  min-width: 100%;
+      animation-name: weaponSkillsAnim;
+  transform-origin: 10% 20%;
+  animation-iteration-count:infinite;
+  animation-direction: normal;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+
+}
+.weaponSkill1{
+  position:relative;
+  max-width: 30px;
+  left:13vw;
+  top:5vw;
+    /* animation-name: weaponSkillsAnim;
+  transform-origin: 10% 20%;
+  animation-iteration-count:infinite;
+  animation-direction: normal;
+  animation-duration: 3s;
+  animation-timing-function: linear; */
+}
+
+.weaponSkill2{
+  position:relative;
+  max-width: 30px;
+  left:6vw;
+  bottom:5vw;
+}
+
+.weaponSkill3{
+  position:relative;
+  max-width: 30px;
+  left:1vw;
+  top:2vw;
+}
+
