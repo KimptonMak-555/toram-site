@@ -75,25 +75,40 @@ right:0; top:0;position:fixed;z-index:5;width: 150px;
 }
 
 .weapondropDiv {
-  background-color: bisque;
   position:fixed;
   top:2%;
   min-width: 11%;
   left:11%;
   display: none;
-  z-index: 5;  
+  z-index: 10;  
 }
 .weapondrop-content{
-  display: block;
-  border-color: black;
-  border-width: 3px;
-  margin:2px;
+  display: flex;
+  flex-direction: column;
+   
 }
-.weapondrop-item{
-  display:block;
-  float:none;
-    border-color: black;
-  border-width: 3px;
-  margin:2px;
-  padding:5px;
+.weapondrop-item {
+  margin-top: 5%;
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: white;
+}
+
+.weapondrop-item img {
+  width: 130px;
+  height: 40px;
+  display: block;
+}
+
+.weapondrop-item .label {
+  position: absolute;
+  top: 55%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.1em;
+  z-index: 2;
+  pointer-events: none;
+  text-shadow: 1px 1px 3px black;
 }

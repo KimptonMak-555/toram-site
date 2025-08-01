@@ -3,6 +3,7 @@ var parentElementID = "dropparent";
 var template = "/NavigationHeader-Component/weapondrop-item.html";
 var dynamicParent = ".weapondrop-content";
 var dropdownOpen = false;
+var dropDownLoaded=false
 var directory = "/Weapons/"
 
 function SetdropdownItems(){
@@ -16,46 +17,45 @@ function SetdropdownItems(){
     return dropList;
 }
 
-function dropDown() {
-    if (dropdownOpen) return;
-    let dynparentElement = document.querySelector(".weapondropDiv");
+function DisplayDropDown() {    
+    let dynamicParentElement = document.querySelector(".weapondropDiv");
+    
+    if (dropdownOpen) {
+        CloseDropdown(dynamicParentElement);
+        return;
+    }
+    dropdownOpen = true
+
     let list = document.querySelectorAll(".weapondrop-item");
-    document.addEventListener("click", ()=>{
-        closedropdown(dynparentElement);
-    })
+
     list.forEach((tag,index) =>{
-        tag.innerHTML = `<strong>${weaponList[index]}</strong>`;
+        tag.querySelector('strong').innerHTML = `${weaponList[index]}`;
     })
-    dynparentElement.setAttribute("style","display:block")
-    setTimeout(()=>{dropdownOpen = true}, 100);
 
+    dynamicParentElement.setAttribute("style","display:block")
 }
 
-async function closedropdown(element) {
-    if (dropdownOpen){
-        dropdownOpen = false;
-        element.style.display = "none";
-        document.removeEventListener("click", closedropdown);
-    }
+async function CloseDropdown(element) {
+    dropdownOpen = false;
+    element.style.display = "none";
 }
-
-async function loaddroplist() {
-    let droptaglist = SetdropdownItems();
-    LoadDynamicElements(parentElementID,template,dynamicParent,droptaglist);
-}
-
-
-async function Run(){
-    if (document.getElementById(parentElementID) !== null) {
-        await loaddroplist()
-        let dropblock = document.querySelector(".weapondrop");
-        dropblock.addEventListener("click",dropDown);
-    }
-}
-
 
 document.addEventListener(componentEvent,async(eventData)=>{
+    if(dropDownLoaded)return;
     if (eventData.detail.component.componentID == "navbar"){
-        Run()   
+        //delete these comments 3 comments
+//having a lot of little methods that are only used once makes reading hard to folllow
+//nice dynamic drop down tho, easy to modify
+
+        if (document.getElementById(parentElementID) !== null) {
+            dropDownLoaded = true;
+
+            //load drop-down items and events
+            let dropTagList = SetdropdownItems();
+            LoadDynamicElements(parentElementID,template,dynamicParent,dropTagList);
+
+            let dropDownBlock = document.querySelector(".weapondrop");
+            dropDownBlock.addEventListener("click",DisplayDropDown);
+        }  
     };
 });

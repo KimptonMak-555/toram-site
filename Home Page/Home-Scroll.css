@@ -107,7 +107,7 @@ h3.head {
 }
 #scroll-list {
   position: absolute;
-  top: 30%;
+  top: 35%;
   left: 40%;
   z-index: 2;
   font-family: inherit;
@@ -116,6 +116,7 @@ h3.head {
 }
 
 #scroll-list a {
+  margin-top: 5%;
   opacity: 0;
   position: relative;
   display: inline-block;
@@ -126,13 +127,13 @@ h3.head {
 
 #scroll-list img {
   width: 300px;
-  height: 100px;
+  height: 40px;
   display: block;
 }
 
 #scroll-list .label {
   position: absolute;
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
