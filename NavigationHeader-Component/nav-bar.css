@@ -62,3 +62,38 @@ right:0; top:0;position:fixed;z-index:5;width: 150px;
   text-align: center;
   color: white;
 }
+
+/* Weapon Drop List */
+
+.weapondrop{
+  position: relative;
+}
+
+.dropListWrapper{
+  position: absolute;
+  min-width: 100%;
+}
+
+.weapondropDiv {
+  background-color: bisque;
+  position:fixed;
+  top:2%;
+  min-width: 11%;
+  left:11%;
+  display: none;
+  z-index: 5;  
+}
+.weapondrop-content{
+  display: block;
+  border-color: black;
+  border-width: 3px;
+  margin:2px;
+}
+.weapondrop-item{
+  display:block;
+  float:none;
+    border-color: black;
+  border-width: 3px;
+  margin:2px;
+  padding:5px;
+}
