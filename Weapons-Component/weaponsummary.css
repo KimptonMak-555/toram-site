@@ -42,8 +42,8 @@ img.weaponAura{
 
 @keyframes weaponSkillsAnim{
   0% {translate: 0%;}
-  50% {translate: -30% -50%;}
-  100%{translate: -60% -100%;}
+  50% {translate: -15% -12%;}
+  100%{translate: -30% -25%;}
 }
 
 .figcaptionText{
@@ -78,11 +78,11 @@ img.weaponAura{
   position: absolute;
   display:block ;
   min-width: 100%;
-      animation-name: weaponSkillsAnim;
+  animation-name: weaponSkillsAnim;
   transform-origin: 10% 20%;
   animation-iteration-count:infinite;
   animation-direction: normal;
-  animation-duration: 3s;
+  animation-duration: 1s;
   animation-timing-function: linear;
 
 }

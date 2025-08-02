@@ -9,8 +9,7 @@ var directory = "/Weapons/"
 function SetdropdownItems(){
     dropList = [];
     weaponList.forEach((weapon) => {
-        let tagdata = [{className:".weapondrop-item", property:"href",value: `${directory + weapon}.html`},
-        ];
+        let tagdata = [{className:".weapondrop-item", property:"href",value: `${directory + weapon}.html`}];
         dropList.push(tagdata);
     })
     console.log(dropList.length)
@@ -33,6 +32,12 @@ function DisplayDropDown() {
     })
 
     dynamicParentElement.setAttribute("style","display:block")
+    
+    setTimeout(()=>{
+    document.addEventListener("click",()=>{    
+        CloseDropdown(dynamicParentElement)
+        },{once:true});
+    });
 }
 
 async function CloseDropdown(element) {
@@ -43,9 +48,6 @@ async function CloseDropdown(element) {
 document.addEventListener(componentEvent,async(eventData)=>{
     if(dropDownLoaded)return;
     if (eventData.detail.component.componentID == "navbar"){
-        //delete these comments 3 comments
-//having a lot of little methods that are only used once makes reading hard to folllow
-//nice dynamic drop down tho, easy to modify
 
         if (document.getElementById(parentElementID) !== null) {
             dropDownLoaded = true;
