@@ -43,6 +43,7 @@ document.addEventListener(dynamicComponentEvent, async (eventData) => {
     const childTagGroups = SetElementGroups();
     await LoadDynamicElements('weaponCardParent','Weapons-Component/WeaponCard.html','.weaponTextOverlayArea',childTagGroups);
     await loadWeaponSkills();
+    AnimateWeaponSkills();
     SetWeaponInteractionEvents();
 });
 

@@ -1,6 +1,9 @@
-let scripts = ["LevelUpSlider-Component/Scroll-ProgressBar.js","Weapons-Component/WeaponScript.js"
-    ,"NonLoadedScripts/AnimateOnView.js","Home Page/ScrollStateScontroller.js","Home Page/fontColorChanger.js",
-    "/Weapons-Component/WeaponSkillsAnimation.js","About-Component/GameIconAnimation.js,/Weapons-Component/WeaponSkillsAnimation.js"];
+let scripts = ["LevelUpSlider-Component/Scroll-ProgressBar.js",
+    "Weapons-Component/WeaponScript.js"
+    ,"NonLoadedScripts/AnimateOnView.js",
+    "Home Page/ScrollStateScontroller.js","Home Page/fontColorChanger.js",
+   ,"About-Component/GameIconAnimation.js",
+   "/Weapons-Component/WeaponSkillsAnimation.js"];
     
 let scriptsLoaded = false;
 let ScriptsPreloadEvent = "ScriptsPreloaded";

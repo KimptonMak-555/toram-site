@@ -12,7 +12,7 @@ function SetdropdownItems(){
         let tagdata = [{className:".weapondrop-item", property:"href",value: `${directory + weapon}.html`}];
         dropList.push(tagdata);
     })
-    console.log(dropList.length)
+
     return dropList;
 }
 

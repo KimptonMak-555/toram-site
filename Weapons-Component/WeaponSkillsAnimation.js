@@ -1,29 +1,42 @@
-var x_translate = 0.0;
-var y_translate = 0.0;
-var List = ["weaponSkill1","weaponSkill2","weaponSkill3"];
-var duration = setInterval(Animate)
+var weaponSkillList = ["weaponSkill1","weaponSkill2","weaponSkill3"];
+//delete this comment, i wanted to make the skillls rotate around a circle, though it
+//looks cool, you can change if you want ig. but ts looks awesome, i suggest tweaking
+// it to look better
 
-function calcTranslate(num){
-    for (let i=0;i<10;i++){
-        x_translate = Math.random()*num;
-        y_translate = Math.random()*num;
-    }
-    return {x:x_translate, y:y_translate}
-}
-
-function LinkLists(){
-    let returnList = [];
-    for (let i=0;i<List.length();i++){
-        returnList[i] = document.querySelectorAll(`.${List[i]}`);
+function GetWeaponSkillElements(){
+    let queryResult = [];
+    for (let i=0; i < weaponSkillList.length; i++){
+        queryResult.push(document.querySelectorAll(`.${weaponSkillList[i]}`));
     };
-    return returnList;
+    //convert nodeList result from querySelectorAll() into an array of htmlElement
+    let elements = []
+        queryResult.forEach((node) => {
+            elements.push(node[0])
+        });
+    return elements;
+}
+function AnimateWeaponSkills() {
+  const holder = document.querySelector('.weaponSkillsHolder');
+  const images = holder.querySelectorAll('img');
+  const radius = 40; // px distance from center
+
+  // Position images evenly around the circle
+  images.forEach((img, i) => {
+    const angle = (i / images.length) * 2 * Math.PI; // in radians
+    const x = Math.cos(angle) * radius;
+    const y = Math.sin(angle) * radius;
+    img.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+  });
+
+  // Animate rotation of the container
+  holder.animate([
+    { transform: 'rotate(0deg)' },
+    { transform: 'rotate(360deg)' }
+  ], {
+    duration: 3000,
+    iterations: Infinity,
+    easing: 'linear'
+  });
 }
 
-async function Animate(){
-    let ElementList = LinkLists();
-    let translation = {};
-    ElementList.forEach((element) => {
-        translation = calcTranslate(20/3);
-        element.style.translate = translation;
-    });
-}
+

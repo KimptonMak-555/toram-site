@@ -75,41 +75,25 @@ img.weaponAura{
 }
 
 .weaponSkillsHolder{
-  position: absolute;
+  position: relative;
+    transform-origin: center center;
   display:block ;
   min-width: 100%;
-  animation-name: weaponSkillsAnim;
   transform-origin: 10% 20%;
-  animation-iteration-count:infinite;
-  animation-direction: normal;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-
 }
 .weaponSkill1{
-  position:relative;
+  position: absolute;
   max-width: 30px;
-  left:13vw;
-  top:5vw;
-    /* animation-name: weaponSkillsAnim;
-  transform-origin: 10% 20%;
-  animation-iteration-count:infinite;
-  animation-direction: normal;
-  animation-duration: 3s;
-  animation-timing-function: linear; */
 }
 
 .weaponSkill2{
-  position:relative;
+  position: absolute;
   max-width: 30px;
-  left:6vw;
-  bottom:5vw;
 }
 
 .weaponSkill3{
-  position:relative;
+  position: absolute;
   max-width: 30px;
-  left:1vw;
-  top:2vw;
 }
+
 
